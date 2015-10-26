@@ -14,6 +14,7 @@ import android.widget.TextView;
  */
 public class Button2 extends MainActivity implements RadioGroup.OnCheckedChangeListener{
 
+    static int a = 0;
     TextView textOut;
     EditText textIn;
     RadioGroup gravityG,styleG;

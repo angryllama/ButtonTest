@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -50,6 +52,16 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        switch(item.getItemId()){
+            case R.id.Menu:
+                startActivity(new Intent("com.example.dan.buttontest.MENU"));
+                return true;
+            case R.id.MenuToast:
+                Toast andEggs = Toast.makeText(MainActivity.this, "This is a toast", Toast.LENGTH_LONG);
+                andEggs.show();
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
